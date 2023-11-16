@@ -21,7 +21,18 @@ for (let item of articles) {
     card.classList.add("news-card")
     card.innerHTML = `<div
     class = "news-image-container">
-    <img src="${item.urlToImage || "./newspaper.jpg"}"
+    <img src="${item.urlToImage || "./newspaper.jpg"}
+    " alt = "" />
+    </div>
+    <div class = "news-content">
+        <div class = "news-title">
+            ${item.title}
+        </div>
+        <div class = "news-description">
+            ${item.description || item.content || ""}
+        </div>
+        <a href = "${item.url}" targer = "_blank"
+        class = "view-button">Read More</a>
     </div>`
 }
 }
